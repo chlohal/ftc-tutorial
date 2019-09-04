@@ -1,0 +1,192 @@
+<html>
+
+<head>
+	<title>Tutorial: FTC Software 0.1</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Work+Sans|Work+Sans:600|Noto+Sans+SC"
+		rel="stylesheet">
+	<link href="./asset/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1><a href="./index.html" style="color: inherit;">Software Team Tutorials</a></h1>
+	</header>
+	<main>
+		<h1>FTC Software 0.1: Get your Tools</h1>
+		<p>Before we do anything, we need to set some programs up on your computer: Git and Android Studio. These tools will let you easily code
+			with
+			your team.</p>
+		<ol class="large">
+			<li id="step1">
+				
+				<div class="scroll"></div>
+				<div class="scrollcover"></div>
+				<h3>What is Git?</h3>
+				<p><em class="info">If you
+						already have and use Git, you can skip to <a href="#step4">Step 4</a>.</em></p>
+				<p>Git is a code-sharing tool that will let you work on the code collaboratively with your team. Here,
+					we'll
+					be using the CLI (Command Line Interface) version, rather than the GUI (Graphical User Interface).
+					This
+					basically means that, instead of clicking on buttons, we'll be entering text commands into a
+					terminal. You
+					might find this harder at first, but it will prepare you for more advanced subjects.
+				</p>
+				<p>Git works together with a website called <a href="github.com">GitHub</a>. GitHub holds the Git files in the cloud, letting everyone on your team work together. If you don't already have a GitHub account, you will need one; you can register at <a href="https://github.com/join">this link</a>. Once you register, make sure to let a senior member know your username in order to allow you onto the robotics projects!</p>
+			</li>
+			<li id="step2">
+					
+				<div class="scrollcover"></div>
+				<h3>Get Git</h3>
+				<p>If you are using <b>Linux</b>, you might already have git installed. Open a Terminal window (click on
+					the
+					button in the top left, then search for "Terminal"), then enter the command "<code
+						class="inline terminal-command">git</code>". If you see something similar to the example below, you can skip to
+					the
+					next step.</p>
+				<p>Otherwise, enter the terminal command "<code class="inline terminal-command">sudo apt-get install git</code>". This
+					will
+					install Git on your computer. If it asks for a password, ask a senior team member to tell you the
+					password. After this command finishes, enter <code class="inline terminal-command">git</code> again to test if it
+					installed correctly-- if it did, you should see something similar to the example below, in which
+					case
+					you can move on to the next step. Otherwise, ask a senior team member.</p>
+				<p>If you are using <b>Windows</b>, you can get git by clicking on <a
+						href="https://git-scm.com/download/win">this link</a>. Install the executable by double-clicking
+					on
+					it once it is downloaded; it may request to make changes to your device. You can just click "next"
+					on
+					all of the options in the installer; the default settings are fine for Robotics. After the
+					installation
+					is complete, open your Windows start menu with the button in the lower left hand corner. Then,
+					search
+					for and open the application "Git Bash" using the "Type here to search" box. When you open Git Bash,
+					it
+					should show you a terminal. Enter in the command "<code class="inline terminal-command">git</code>" in order to make
+					sure
+					that everything is working correctly. If you see something similar to the example below, you can
+					proceed
+					to the next step.</p>
+				<br>
+				<samp class="terminal small limitheight block">
+					<span style="color:#00ff00">user@computer</span>:<span
+						style="color:#00ffff">~&nbsp;$</span>&nbsp;git
+					<br>usage:&nbsp;git&nbsp;[--version]&nbsp;[--help]&nbsp;[-C&nbsp;&lt;path&gt;]&nbsp;[-c&nbsp;name=value]
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--exec-path[=&lt;path&gt;]]&nbsp;[--html-path]&nbsp;[--man-path]&nbsp;[--info-path]
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-p&nbsp;|&nbsp;--paginate&nbsp;|&nbsp;--no-pager]&nbsp;[--no-replace-objects]&nbsp;[--bare]
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[--git-dir=&lt;path&gt;]&nbsp;[--work-tree=&lt;path&gt;]&nbsp;[--namespace=&lt;name&gt;]
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;command&gt;&nbsp;[&lt;args&gt;]
+					<br>
+					<br>These&nbsp;are&nbsp;common&nbsp;Git&nbsp;commands&nbsp;used&nbsp;in&nbsp;various&nbsp;situations:
+					<br>
+					<br>start&nbsp;a&nbsp;working&nbsp;area&nbsp;(see&nbsp;also:&nbsp;git&nbsp;help&nbsp;tutorial)
+					<br>&nbsp;&nbsp;&nbsp;clone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clone&nbsp;a&nbsp;repository&nbsp;into&nbsp;a&nbsp;new&nbsp;directory
+					<br>&nbsp;&nbsp;&nbsp;init&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create&nbsp;an&nbsp;empty&nbsp;Git&nbsp;repository&nbsp;or&nbsp;reinitialize&nbsp;an&nbsp;existing&nbsp;one
+					<br>
+					<br>work&nbsp;on&nbsp;the&nbsp;current&nbsp;change&nbsp;(see&nbsp;also:&nbsp;git&nbsp;help&nbsp;everyday)
+					<br>&nbsp;&nbsp;&nbsp;add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;file&nbsp;contents&nbsp;to&nbsp;the&nbsp;index
+					<br>&nbsp;&nbsp;&nbsp;mv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move&nbsp;or&nbsp;rename&nbsp;a&nbsp;file,&nbsp;a&nbsp;directory,&nbsp;or&nbsp;a&nbsp;symlink
+					<br>&nbsp;&nbsp;&nbsp;reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;current&nbsp;HEAD&nbsp;to&nbsp;the&nbsp;specified&nbsp;state
+					<br>&nbsp;&nbsp;&nbsp;rm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;files&nbsp;from&nbsp;the&nbsp;working&nbsp;tree&nbsp;and&nbsp;from&nbsp;the&nbsp;index
+					<br>
+					<br>examine&nbsp;the&nbsp;history&nbsp;and&nbsp;state&nbsp;(see&nbsp;also:&nbsp;git&nbsp;help&nbsp;revisions)
+					<br>&nbsp;&nbsp;&nbsp;bisect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;binary&nbsp;search&nbsp;to&nbsp;find&nbsp;the&nbsp;commit&nbsp;that&nbsp;introduced&nbsp;a&nbsp;bug
+					<br>&nbsp;&nbsp;&nbsp;grep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print&nbsp;lines&nbsp;matching&nbsp;a&nbsp;pattern
+					<br>&nbsp;&nbsp;&nbsp;log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;commit&nbsp;logs
+					<br>&nbsp;&nbsp;&nbsp;show&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;various&nbsp;types&nbsp;of&nbsp;objects
+					<br>&nbsp;&nbsp;&nbsp;status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;the&nbsp;working&nbsp;tree&nbsp;status
+					<br>
+					<br>grow,&nbsp;mark&nbsp;and&nbsp;tweak&nbsp;your&nbsp;common&nbsp;history
+					<br>&nbsp;&nbsp;&nbsp;branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List,&nbsp;create,&nbsp;or&nbsp;delete&nbsp;branches
+					<br>&nbsp;&nbsp;&nbsp;checkout&nbsp;&nbsp;&nbsp;Switch&nbsp;branches&nbsp;or&nbsp;restore&nbsp;working&nbsp;tree&nbsp;files
+					<br>&nbsp;&nbsp;&nbsp;commit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Record&nbsp;changes&nbsp;to&nbsp;the&nbsp;repository
+					<br>&nbsp;&nbsp;&nbsp;diff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;changes&nbsp;between&nbsp;commits,&nbsp;commit&nbsp;and&nbsp;working&nbsp;tree,&nbsp;etc
+					<br>&nbsp;&nbsp;&nbsp;merge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join&nbsp;two&nbsp;or&nbsp;more&nbsp;development&nbsp;histories&nbsp;together
+					<br>&nbsp;&nbsp;&nbsp;rebase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reapply&nbsp;commits&nbsp;on&nbsp;top&nbsp;of&nbsp;another&nbsp;base&nbsp;tip
+					<br>&nbsp;&nbsp;&nbsp;tag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create,&nbsp;list,&nbsp;delete&nbsp;or&nbsp;verify&nbsp;a&nbsp;tag&nbsp;object&nbsp;signed&nbsp;with&nbsp;GPG
+					<br>
+					<br>collaborate&nbsp;(see&nbsp;also:&nbsp;git&nbsp;help&nbsp;workflows)
+					<br>&nbsp;&nbsp;&nbsp;fetch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download&nbsp;objects&nbsp;and&nbsp;refs&nbsp;from&nbsp;another&nbsp;repository
+					<br>&nbsp;&nbsp;&nbsp;pull&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch&nbsp;from&nbsp;and&nbsp;integrate&nbsp;with&nbsp;another&nbsp;repository&nbsp;or&nbsp;a&nbsp;local&nbsp;branch
+					<br>&nbsp;&nbsp;&nbsp;push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update&nbsp;remote&nbsp;refs&nbsp;along&nbsp;with&nbsp;associated&nbsp;objects
+					<br>
+					<br>'git&nbsp;help&nbsp;-a'&nbsp;and&nbsp;'git&nbsp;help&nbsp;-g'&nbsp;list&nbsp;available&nbsp;subcommands&nbsp;and&nbsp;some
+					<br>concept&nbsp;guides.&nbsp;See&nbsp;'git&nbsp;help&nbsp;&lt;command&gt;'&nbsp;or&nbsp;'git&nbsp;help&nbsp;&lt;concept&gt;'
+					<br>to&nbsp;read&nbsp;about&nbsp;a&nbsp;specific&nbsp;subcommand&nbsp;or&nbsp;concept.
+					<br>
+				</samp>
+			</li>
+			<li id="step3">
+				
+				<div class="scrollcover"></div>
+				<h3>Configuing Git</h3>
+				<p>Every edit in git includes a field for the user who "commited" (added) it. We need to tell your local
+					installation of git what your name is. Luckily, there is a simple command to do this: <code
+						class="inline terminal-command">git config --global user.name "Your GitHub Username"</code>.
+					<p>You can simply paste this command into your terminal (or Git Bash), but remember to change the name!</p>
+					<p>Next, use this command to tell git what your email is: <code
+							class="inline terminal-command">git config --global user.email email@example.com</code></p>
+					<p>Again, remember to change the email to your GitHub login email!</p>
+					<p>Neither of these commands should give you any output, but you can check that they succeeded with
+						<code class="terminal-command">git config --list</code>. That command should give you a list of
+						configuration
+						values; you should see your name and email under the right fields!</p>
+			</li>
+			<li id="step4">
+				
+				<div class="scrollcover"></div>
+				<h3>What is Android Studio?</h3>
+				<p>Android Studio is an IDE, or Integrated Development Environment. You will be using Android Studio to
+					write your code; this is better than a simple text editor because it will check your code for
+					errors,
+					help you build your code, and allow you to easily install dependancies (programs that your code needs in order to run). </p>
+			</li>
+			<li id="step5">
+				
+				<div class="scrollcover"></div>
+				<h3>Installing Android Studio</h3>
+				<p><em class="warn">If your computer already has Android Studio, make sure it is version 3.0 or
+						greater. You can see the version number by going to "Help > About" on the top bar.</em></p>
+				<p><em class="info">If you're advanced enough to prefer something else, you can totally use something other than Android Studio.</em></p>
+				<p>To install Android Studio, first get the installer from <a
+						href="https://developer.android.com/studio/">here</a>. Just click on the "Download Android
+					Studio"
+					button, and the webpage should tell you how to download it.</p>
+				<p>On <b>Linux</b>, next you will unzip the file. Right-click on the zip file in your downloads, and
+					select
+					the option to "Extract All Files". In the popup menu that opens up, select your Home to extract the files. This might take a long time, don't worry; that's normal.</p>
+				<p>Once the extraction completes, go back to the Terminal window that you opened when installing Git. Look at the <b>current directory</b>, directly before the dollar sign on the command line. If this hasn't been changed, it should just be a tilde (~). This means that the terminal is currently in your <b>home directory</b>.
+				<p>To change the directory, use the <code class="inline">cd</code> command to move to Android Studio's folder: <code class="inline terminal-command">cd android-studio</code>. Then, navigate to the <code class="inline">bin</code> folder; <code class="inline terminal-command">cd bin</code>. Finally, run the <code class="inline">studio.sh</code> file: <code class="inline terminal-command">./studio.sh</code>.</p>
+				<p>This will launch Android Studio! It might take a few minutes to open, but once it succeeds, you'll see a screen like the example below. You probably want to pin it to your launcher. If it hasn't finished after five minutes, try entering <code class="inline terminal-command">./studio.sh</code> again. Once you see the window, go on to the next step!
+				<p>On <b>Windows</b>, just launch the .exe file that was downloaded. It will ask for administrator
+					permissions. Once you agree and the installer loads, just click "Next" until you see a green
+					progress
+					bar.</p>
+				<p>Once the final installation completes, make sure the "Launch Android Studio" box is checked, and
+					click
+					"Finish". You should eventually see a window that looks like the example below. It might take up to
+					a
+					minute to load, or more if you have an outdated computer. Please be patient! If it hasn't loaded
+					after 5
+					minutes, try to launch Android Studio by searching in the Start menu. If you see this window, you can move on to the next step.</p>
+				<img src="img/android_studio_home.png" alt="Android Studio homepage">
+			</li>
+			<li id="step6">
+				
+				<div class="scrollcover"></div>
+				<h3>Configuring Android Studio</h3>
+				<p>Once you install Android Studio, there's only a small amount of extra configuration to do. Click on the "Configure" button in the bottom right corner of the Android Studio window. Then, click on "Settings" to open up the settings menu.</p>
+				<p>From here, click on the search bar in the top-left corner. Search for "Instant Run"; this should show you a page with four checkmarks. All of them will be checked. Uncheck the top checkbox, which is labelled "Enable Instant Run to hot swap code/resource changes on deploy (default enabled)". Then, click the Apply button in the lower right.</p>
+				<p>After this, you can click "Ok" in the lower-right corner and go back to the main Android Studio window. From here, you'll need to get some code to work on! In the next set of instructions, we'll get the First Driver Controller template app.</p>
+				<img src="img/android_studio_instant_run_config.png" alt="Android Studio configuration window for Instant Run">
+			</li>
+		</ol>
+	</main>
+	<footer>
+		<div>
+			<p>&leftarrow; <a href=".">Previous</a></p><p><a href="0-2.html">Next</a> &rightarrow;</p>
+		</div>
+	</footer>
+</body>
+
+</html>

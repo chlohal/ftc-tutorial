@@ -1,0 +1,82 @@
+<html>
+
+<head>
+	<title>Tutorial: FTC Software 0.2</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Work+Sans|Work+Sans:600|Noto+Sans+SC"
+		rel="stylesheet">
+	<link href="./asset/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1><a href="./index.html" style="color: inherit;">Software Team Tutorials</a></h1>
+	</header>
+	<main>
+		<h1>FTC Software 0.2: Clone the Code</h1>
+		<p>Next, we need to set up your project.</p>
+		<ol class="large">
+			<li id="step1">
+				<h3>Git Clone</h3>
+				<p><em class="warn">Make sure you're in the right folder! If you see <code>android-studio</code> in your terminal, enter <code class="terminal-command">cd ~</code> before continuing.</em></p>
+				<p>The <code class="terminal-command">git clone</code> command lets you copy code from the cloud. If you have a <b>repository</b> set up, we'll clone that. Otherwise, we'll clone the FTC Starting Repository. If you don't know which, ask a senior team member.</p>
+				<p><code class="terminal-command">git clone</code> requires one additional piece of data: the web address to get the code from. For the FTC starter repository, this is <code>https://github.com/ftctechnh/ftc_app.git</code>, but if you have one set up, you'll need to use that. In your terminal window, enter the following command: <code class="terminal-command">git clone --depth=1 https://example.com/user/repository</code>-- remember to change the address! If it succeeds, you should get an output similar to the one below.</p>
+				<p>
+					<samp class="terminal small limitheight block">
+						<span style="color:#00ff00">user@computer</span>:<span style="color:#00ffff">~&nbsp;$</span>&nbsp;git&nbsp;clone&nbsp;--depth=1 https://github.com/ftctechnh/ftc_app
+						<br>Cloning into 'ftc_app'...
+						<br>remote: Enumerating objects: 539, done.
+						<br>remote: Counting objects: 100% (539/539), done.
+						<br>remote: Compressing objects: 100% (362/362), done.
+						<br>remote: Total 539 (delta 339), reused 296 (delta 148), pack-reused 0
+						<br>Receiving objects: 100% (539/539), 117.18 MiB | 8.59 MiB/s, done.
+						<br>Resolving deltas: 100% (339/339), done.
+						<br>Checking out files: 100% (472/472), done.
+					</samp>
+				</p>
+			</li>
+			<li id="step2">
+				<h3>Directories are Folders</h3>
+                <p>Just like a window of Windows Explorer or Finder, a terminal window has a current folder. This is the folder that you're "looking at"; where the window is currently focussed. Your current folder is especially relevant for Git, which won't know where your project is unless you're looking at it.</p>
+				<p>But where are you? On most Terminal windows, you can see the current folder right after your username. If you've followed the Linux tutorial, you'll be in <code>~/android-studio</code>. On Windows, you'll probably just be in the default: <code>~</code>. The <b>tilde</b> (~) is an abbreviation for your <b>home directory</b>.</p>
+				<p>To change your current folder, use the <code class="terminal-command">cd</code> (Change Directory) command. After <code>cd</code>, you can type whichever folder you want to switch to. For example,</p>
+				<p>
+					<ul>
+						<li><code class="terminal-command">cd ~</code> will change to your home directory.</li>
+						<li><code class="terminal-command">cd ~/Documents</code> will change to your Documents folder.</li>
+						<li><code class="terminal-command">cd ~/Documents/aarrgh</code> will go to the folder with your English essays.</li>
+						<li>If you are already in your Documents folder, <code class="terminal-command">cd aarrgh</code> will shortcut you to your English essays.</li>
+					</ul>
+				</p>
+				<p>Since you likely won't need to do much in the terminal outside of robotics, let's just <code>cd</code> into the repository so Git can tell which project you're working on. If you look up to the output from <code class="terminal-command">git clone</code>, it will tell you where your project is. Look for a line saying something like <code>Cloning into 'directory_name'</code>. Then, use <code>cd</code> to switch into that folder.</p>
+			</li>
+			<li id="step3">
+				<h3>Your Zeroth Commit</h3>
+				<p>What's a commit? A <b>commit</b> is a Git term for a set of changes which you have <u>committed</u> to. Commits <i>can</i> be deleted, but it'll remove everything in the commit, so be sure to check before you commit!</p>
+				<p>To commit changes, first you have to <b>stage</b> them. This more-or-less means that you need to tell Git which changes you'd like to add. For this, you'll use the <code class="terminal-command">git add</code> command. Here's how:</p>
+				<p>
+					<ul>
+						<li>To stage <i>every</i> change, use <code class="terminal-command">git add .</code> (the period stands for "everything").</li>
+						<li>To stage a specific file, use <code class="terminal-command">git add file</code>, where <code>file</code> is the <b>path</b> to your file.</li>
+						<li>To un-stage an accidentally added change, use <code class="terminal-command">git reset HEAD file</code>, where <code>file</code> is the path to your file.</li>
+						<li>To get a list of every change, use <code class="terminal-command">git status</code>-- this will also give you the paths you need for <code class="terminal-command">git add</code>.</li>
+					</ul>
+				</p>
+				<p>It's always a good idea to run <code class="terminal-command">git status</code> before committing. Once you're sure you have all your changes, you can use the <code class="terminal-command">git commit</code> command to bundle them into a commit. It's also nice to include a <b>commit message</b>-- a short summary telling what your commit is about. By default, Git will open up your text editor and ask for a commit message. Lines starting with <code>#</code> will be ignored, and leaving it empty will cause an abort. Try to make your message descriptive and short, but it's alright if you can't do one or the other (or both). After you save and exit your message, Git will make your first commit!</p>
+			</li>
+			<li id="step4">
+				<h3>Pushing and Pulling</h3>
+				<p>Great! You've packaged your changes into a brand-new commit! However, it's still on your computer-- to share it with your team, you'll use a pair of commands: <code class="terminal-command">git push</code> and <code class="terminal-command">git pull</code>.</p>
+				<p><code class="terminal-command">git push</code> <b>pushes</b> your commits up to the cloud. When you enter <code class="terminal-command">git push</code>, it may ask for a login-- make sure to use your GitHub <i>username</i>, not email! Don't worry if your password appears blank; it's still recording your keys, it's just a security measure.</p>
+				<p>A common error with <code class="terminal-command">git push</code> is "<code>remote repository contains commits unmerged into the local branch</code>"". This means that your local changes are out-of-date-- use <code class="terminal-command">git pull</code> to update, and try again.</p>
+				<p>Once you've pushed your commits, a teammate might want to edit them on their laptop. To do this, they can use the <code class="terminal-command">git pull</code> command, which <b>pulls</b> data from the cloud down into the laptop. Errors might occur if the same files were modified; if so, Git will try its best to "merge" them-- to put together the two versions of the files. This may cause errors in your code, so if a <code class="terminal-command">git pull</code> ever says that it merged two files, it's a good idea to check your files.</p>
+			</li>
+		</ol>
+	</main>
+	<footer>
+		<div>
+			<p>&leftarrow; <a href="0-1.html">Previous</a></p><p><a href=".">Next</a> &rightarrow;</p>
+		</div>
+	</footer>
+</body>
+
+</html>
