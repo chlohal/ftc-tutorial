@@ -1,0 +1,44 @@
+<html>
+
+<head>
+	<title>Tutorial: FTC Software 0.3</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Work+Sans|Work+Sans:600|Noto+Sans+SC"
+		rel="stylesheet">
+	<link href="./asset/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1><a href="./index.html" style="color: inherit;">Software Team Tutorials</a></h1>
+	</header>
+	<main>
+		<h1>FTC Software 0.3: Open Android Studio</h1>
+		<p>In order to use Android Studio, you'll need to open it.</p>
+		<ol class="large">
+			<li id="step1">
+                <h3>Open the Studio</h3>
+                <p>On <b>Windows</b>, the installer should have added Android Studio to your Start Menu. Click on the box labelled "Type here to search", and enter "Android Studio". Click on the first result to open it.</p>
+                <p>On Linux, you should have pinned Android Studio to your taskbar. Click on the Android Studio icon to launch it.</p>
+            </li>
+            <li id="step2">
+                <h3>Open the Project</h3>
+                <p>As soon as Android Studio loads, click the <code>Import Project (Gradle, Eclipse, ADT, etc)</code> button. This will open a <b>file picker</b>; choose the folder where you cloned the repository. After you click "Okay", it will open the main window of Android Studio. It will look similar to the screenshot below.</p>
+                <img src="img/android_studio_main_window.png" alt="Android Studio main window">
+
+            </li>
+            <li id="step3">
+                <h3>The Things in Android Studio</h3>
+                <p>Android studio has 3 main sections, or panels. On the bottom is your Build panel, which shows the progress of any code-builds you might have running. When you first open a project in Android Studio, it will start building automatically in order to test; you'll likely see a loading icon instead of the "Build: Completed Successfully" in the screenshot. Build logs can also help you find errors in the code. If you don't see this panel, you can open it by clicking on <code>View > Tool Windows > Build</code> in the top bar.</p>
+                <p>Second, on the left, you can see your files. This is like a built-in file browser for Android Studio. If you see something other than "Android" in the drop-down at the top, you should set it to "Android". Below, the Files panel has a list of all Android code. Your code will be in <code>TeamCode > java > org.firstinspires.ftc.teamcode</code>, which will probably be empty when you open it. You can create a file by right-clicking and selecting <code>New > Java Class</code>.</p>
+                <p>After you've created a Java file, you can double-click the file to open it in Android Studio's third main panel: the editor, which takes up the top-right corner. You'll use the editor to actually type your code. If you see code underlined with red, it means that it has an error. Green <i>underlines</i> mean that optimizations can be applied to your code. Green <i>text</i> indicates a comment-- comments will be ignored when the program is being built, so they can be used to explain code.</p>
+            </li>
+		</ol>
+	</main>
+	<footer>
+		<div>
+			<p>&leftarrow; <a href="0-2.html">Previous</a></p><p><a href=".">Next</a> &rightarrow;</p>
+		</div>
+	</footer>
+</body>
+
+</html>
